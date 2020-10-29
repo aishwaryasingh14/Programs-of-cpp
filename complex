@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class complex
+{
+    int real,img;
+    public:
+    void input()
+    {
+        cout<<"Enter real nd img: ";
+        cin>>real>>img;
+    }
+    void show()
+    {
+        cout<<real<<"\t"<<img<<endl;
+    }
+    friend void add(complex,complex);
+};
+
+void add(complex c1,complex c2)
+{
+    cout<<c1.real+c2.real;
+    cout<<c1.img+c2.img;
+}
+
+int main()
+{
+    complex c1,c2;
+    c1.input();
+    c2.input();
+    c1.show();
+    c2.show();
+    add(c1,c2);
+    return 0;
+}
